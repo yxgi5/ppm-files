@@ -1,0 +1,8 @@
+# convert to P6 (binary)
+convert image.ppm result.ppm
+
+# convert to P3 (ASCII)
+convert image.ppm -compress none result.ppm
+sed -i -e 'N' -e '2b' -e 's/ /\n/g' 480x640a_2.ppm # 空格用换行符替换
+sed -i '/^$/d' 480x640a_2.ppm #去空行 
+
